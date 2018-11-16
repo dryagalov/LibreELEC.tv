@@ -1,0 +1,122 @@
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
+@@ -50,8 +50,8 @@
+ 
+ 
+ / {
+-	model = "ROCK960";
+-	compatible = "96rocks,rock960", "rockchip,rk3399";
++	model = "Khadas Captain";	
++	compatible = "khadas,captain", "rockchip,rk3399";
+ 
+ 	vcc1v8_s0: vcc1v8-s0 {
+ 		compatible = "regulator-fixed";
+@@ -164,8 +164,6 @@
+ 		clock-names = "ext_clock";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&wifi_enable_h>;
+-		post-power-on-delay-ms = <200>;
+-		power-off-delay-us = <10>;
+ 
+ 		/*
+ 		 * On the module itself this is one of these (depending
+@@ -173,7 +171,7 @@
+ 		 * - SDIO_RESET_L_WL_REG_ON
+ 		 * - PDN (power down when low)
+ 		 */
+-		reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
++		reset-gpios = <&gpio2 28 GPIO_ACTIVE_LOW>; /* GPIO2_D4 */
+ 	};
+ 
+ 	wireless-wlan {
+@@ -181,24 +179,22 @@
+ 		rockchip,grf = <&grf>;
+ 		wifi_chip_type = "ap6354";
+ 		sdio_vref = <1800>;
+-		WIFI,host_wake_irq = <&gpio0 3 GPIO_ACTIVE_HIGH>;
++		WIFI,host_wake_irq = <&gpio0 3 GPIO_ACTIVE_HIGH>; /* GPIO0_a3 */
+ 		status = "okay";
+ 	};
+ 
+ 	wireless-bluetooth {
+-		compatible = "bluetooth-platdata";
+-		clocks = <&rk808 1>;
+-		clock-names = "ext_clock";
+-		/* wifi-bt-power-toggle; */
+-		uart_rts_gpios = <&gpio2 19 GPIO_ACTIVE_LOW>;
+-		pinctrl-names = "default", "rts_gpio";
+-		pinctrl-0 = <&uart0_rts>;
+-		pinctrl-1 = <&uart0_gpios>;
+-		/* BT,power_gpio  = <&gpio3 19 GPIO_ACTIVE_HIGH>; */
+-		BT,reset_gpio    = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+-		BT,wake_gpio     = <&gpio2 27 GPIO_ACTIVE_HIGH>;
+-		BT,wake_host_irq = <&gpio0 4 GPIO_ACTIVE_HIGH>;
+-		status = "okay";
++		    compatible = "bluetooth-platdata";
++		    //wifi-bt-power-toggle;
++		    uart_rts_gpios = <&gpio2 19 GPIO_ACTIVE_LOW>; /* GPIO2_C3 */
++		    pinctrl-names = "default", "rts_gpio";
++		    pinctrl-0 = <&uart0_rts>;
++		    pinctrl-1 = <&uart0_gpios>;
++		    //BT,power_gpio  = <&gpio3 19 GPIO_ACTIVE_HIGH>; /* GPIOx_xx */
++		    BT,reset_gpio    = <&gpio2 27 GPIO_ACTIVE_HIGH>; /* GPIO2_D3 */
++		    BT,wake_gpio     = <&gpio2 26 GPIO_ACTIVE_HIGH>; /* GPIO2_D2 */
++		    BT,wake_host_irq = <&gpio0 4 GPIO_ACTIVE_HIGH>; /* GPIO0_A4 */
++		    status = "okay";
+ 	};
+ 
+ 	test-power {
+@@ -214,8 +210,8 @@
+ };
+ 
+ &sdmmc {
+-	clock-frequency = <100000000>;
+-	max-frequency = <100000000>;
++	clock-frequency = <150000000>;
++	clock-freq-min-max = <100000 150000000>;
+ 	supports-sd;
+ 	bus-width = <4>;
+ 	cap-mmc-highspeed;
+@@ -234,8 +230,8 @@
+ };
+ 
+ &sdio0 {
+-	clock-frequency = <100000000>;
+-	max-frequency = <100000000>;
++	clock-frequency = <50000000>;
++	clock-freq-min-max = <200000 50000000>;
+ 	supports-sdio;
+ 	bus-width = <4>;
+ 	disable-wp;
+@@ -532,8 +528,8 @@
+ 		reg = <0x22>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&fusb0_int>;
+-		vbus-5v-gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;
+ 		int-n-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
++		vbus-5v-gpios = <&gpio4 26 GPIO_ACTIVE_HIGH>;
+ 		status = "okay";
+ 	};
+ };
+@@ -769,7 +765,7 @@
+ 	pinctrl-1 = <&rgmii_sleep_pins>;
+ 	tx_delay = <0x28>;
+ 	rx_delay = <0x11>;
+-	status = "disabled";
++	status = "okay";
+ };
+ 
+ &saradc {
+@@ -798,10 +794,10 @@
+ };
+ 
+ &pcie0 {
+-	ep-gpios = <&gpio3 9 GPIO_ACTIVE_HIGH>;
++	ep-gpios = <&gpio1 3 GPIO_ACTIVE_HIGH>; /* GPIO1_A3 */
+ 	num-lanes = <4>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pcie_clkreqn_cpm>;
++//  pinctrl-names = "default";
++//  pinctrl-0 = <&pcie_clkreqn_cpm>;
+ 	status = "okay";
+ };

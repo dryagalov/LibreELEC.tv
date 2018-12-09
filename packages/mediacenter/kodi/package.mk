@@ -12,20 +12,20 @@ PKG_PATCH_DIRS="$KODI_VENDOR"
 
 case $KODI_VENDOR in
   raspberrypi)
-    PKG_VERSION="newclock5_18.0b5-Leia"
-    PKG_SHA256="f447006ce1dee5053579fc5193cac1e2e8c19074e71ed86c71e60089232ee2cf"
+    PKG_VERSION="newclock5_18.0rc2-Leia"
+    PKG_SHA256="5e6c3dcac6202039a0a3809b80ea04975c3638699dc2b479da5a0c5c1f3b8f9f"
     PKG_URL="https://github.com/popcornmix/xbmc/archive/$PKG_VERSION.tar.gz"
     PKG_SOURCE_NAME="kodi-$KODI_VENDOR-$PKG_VERSION.tar.gz"
     ;;
   rockchip)
-    PKG_VERSION="rockchip_18.0b5-Leia"
-    PKG_SHA256="9b43e77fe4e191016cd51c57f02a6d7c10c1806189dc8be6d95aac7d716a267d"
+    PKG_VERSION="rockchip_18.0rc2-Leia"
+    PKG_SHA256="2f70a655a6105e632baf554065b82b7cf6a7291162df714e4bfb18beb5e88335"
     PKG_URL="https://github.com/kwiboo/xbmc/archive/$PKG_VERSION.tar.gz"
     PKG_SOURCE_NAME="kodi-$KODI_VENDOR-$PKG_VERSION.tar.gz"
     ;;
   *)
-    PKG_VERSION="18.0b5-Leia"
-    PKG_SHA256="7735bd346d3f1d62f8bd7a37cc5ad25b1fa16404c133e10e12995ac9d23d0161"
+    PKG_VERSION="18.0rc2-Leia"
+    PKG_SHA256="17e95081680d8aaad1693518ebc9703b2402f2ca6fbff8614e53b19d6b922a37"
     PKG_URL="https://github.com/xbmc/xbmc/archive/$PKG_VERSION.tar.gz"
     PKG_SOURCE_NAME="kodi-$PKG_VERSION.tar.gz"
     ;;
@@ -204,6 +204,7 @@ KODI_LIBDVD="$KODI_DVDCSS \
 
 PKG_CMAKE_OPTS_TARGET="-DNATIVEPREFIX=$TOOLCHAIN \
                        -DWITH_TEXTUREPACKER=$TOOLCHAIN/bin/TexturePacker \
+                       -DWITH_JSONSCHEMABUILDER=$TOOLCHAIN/bin/JsonSchemaBuilder \
                        -DDEPENDS_PATH=$PKG_BUILD/depends \
                        -DPYTHON_EXECUTABLE=$TOOLCHAIN/bin/$PKG_PYTHON_VERSION \
                        -DPYTHON_INCLUDE_DIRS=$SYSROOT_PREFIX/usr/include/$PKG_PYTHON_VERSION \

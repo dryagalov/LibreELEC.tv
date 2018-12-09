@@ -29,9 +29,19 @@
     KERNEL_MAKE_EXTRACMD+=" rockchip/rk3399-rock960.dtb"
     KERNEL_MAKE_EXTRACMD+=" rockchip/rk3399-rockpro64.dtb"
     KERNEL_MAKE_EXTRACMD+=" rockchip/rk3399-sapphire.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3399-khadas-captain-linux.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3399-khadas-edge-linux.dtb"
+    KERNEL_MAKE_EXTRACMD+=" rockchip/rk3399-khadas-edgev-linux.dtb"
 
   # Mali GPU family
     MALI_FAMILY="t860"
 
   # kernel serial console
     EXTRA_CMDLINE="console=uart8250,mmio32,0xff1a0000 console=tty0"
+
+    UBOOT_VERSION="vendor"
+
+  # additional packages to install:
+  # Space separated list is supported,
+  # e.g. ADDITIONAL_PACKAGES="PACKAGE1 PACKAGE2"
+    ADDITIONAL_PACKAGES+=" rockchip-autoscript"

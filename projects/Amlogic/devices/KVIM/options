@@ -11,7 +11,7 @@
     KERNEL_UBOOT_EXTRA_TARGET="gxl_p212_2g_kvim.dtb"
 
   # Additional kernel dependencies
-    KERNEL_EXTRA_DEPENDS_TARGET="device-trees-amlogic"
+    KERNEL_EXTRA_DEPENDS_TARGET="device-trees-amlogic-dtb"
 
   # additional drivers to install:
   # for a list of additinoal drivers see packages/linux-drivers
@@ -27,7 +27,7 @@
   # additional packages to install:
   # Space separated list is supported,
   # e.g. ADDITIONAL_PACKAGES="PACKAGE1 PACKAGE2"
-    ADDITIONAL_PACKAGES+=" autoscript-amlogic"
+    ADDITIONAL_PACKAGES+=" autoscript-amlogic-kvim"
 
   # add OOTB support for Khadas VIM IR remote
     IR_REMOTE_KEYMAPS="$IR_REMOTE_KEYMAPS khadas_vim"

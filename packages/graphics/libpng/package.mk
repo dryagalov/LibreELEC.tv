@@ -2,17 +2,14 @@
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 
 PKG_NAME="libpng"
-PKG_VERSION="1.6.29"
-PKG_SHA256="4245b684e8fe829ebb76186327bb37ce5a639938b219882b53d64bd3cfc5f239"
-PKG_ARCH="any"
+PKG_VERSION="1.6.35"
+PKG_SHA256="23912ec8c9584917ed9b09c5023465d71709dce089be503c7867fec68a93bcd7"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.libpng.org/"
 PKG_URL="$SOURCEFORGE_SRC/libpng/$PKG_NAME-$PKG_VERSION.tar.xz"
 PKG_DEPENDS_HOST="zlib:host"
 PKG_DEPENDS_TARGET="toolchain zlib"
-PKG_SECTION="graphics"
-PKG_SHORTDESC="libpng: Portable Network Graphics (PNG) Reference Library"
-PKG_LONGDESC="PNG (Portable Network Graphics) is an extensible file format for the lossless, portable, well-compressed storage of raster images. PNG provides a patent-free replacement for GIF and can also replace many common uses of TIFF. Indexed-color, grayscale, and truecolor images are supported, plus an optional alpha channel. Sample depths range from 1 to 16 bits."
+PKG_LONGDESC="An extensible file format for the lossless, portable, well-compressed storage of raster images."
 PKG_TOOLCHAIN="configure"
 PKG_BUILD_FLAGS="+pic +pic:host"
 

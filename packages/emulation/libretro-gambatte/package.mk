@@ -2,16 +2,12 @@
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="libretro-gambatte"
-PKG_VERSION="d1e3826"
-PKG_SHA256="f51d3ece6ca12b865ae73c091a1f44cea9e4865bb6333b503818b82401e234b3"
-PKG_ARCH="any"
+PKG_VERSION="85edb5b900dcdc12df7d734f0cedcdcfbf84d70f"
+PKG_SHA256="fb83d45b36d211477171fc7ae2faf9afa3022c7c031c97a0fceef45b15bf6d33"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/libretro/gambatte-libretro"
 PKG_URL="https://github.com/libretro/gambatte-libretro/archive/$PKG_VERSION.tar.gz"
-PKG_SOURCE_DIR="gambatte-libretro-$PKG_VERSION*"
 PKG_DEPENDS_TARGET="toolchain kodi-platform"
-PKG_SECTION="emulation"
-PKG_SHORTDESC="game.libretro.gambatte: Gambatte for Kodi"
 PKG_LONGDESC="game.libretro.gambatte: Gambatte for Kodi"
 
 PKG_LIBNAME="gambatte_libretro.so"

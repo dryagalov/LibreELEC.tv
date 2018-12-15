@@ -3,13 +3,11 @@
 
 PKG_NAME="initramfs"
 PKG_VERSION=""
-PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.openelec.tv"
 PKG_URL=""
 PKG_DEPENDS_TARGET="toolchain libc:init busybox:init linux:init plymouth-lite:init util-linux:init e2fsprogs:init dosfstools:init fakeroot:host"
 PKG_SECTION="virtual"
-PKG_SHORTDESC="initramfs: Metapackage for installing initramfs"
 PKG_LONGDESC="debug is a Metapackage for installing initramfs"
 
 if [ "$ISCSI_SUPPORT" = yes ]; then
@@ -24,7 +22,7 @@ fi
 
 post_install() {
   ( cd $BUILD/initramfs
-    if [ "$TARGET_ARCH" = "x86_64" -o "$TARGET_ARCH" = "powerpc64" ]; then
+    if [ "$TARGET_ARCH" = "x86_64" ]; then
       ln -sf /usr/lib $BUILD/initramfs/lib64
       mkdir -p $BUILD/initramfs/usr
       ln -sf /usr/lib $BUILD/initramfs/usr/lib64

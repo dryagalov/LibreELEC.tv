@@ -2,11 +2,11 @@
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="inputstream.rtmp"
-PKG_VERSION="bf5351e"
-PKG_SHA256="f1a6117569f3293bc61dad6091ed216d0c82428c3d8981eea9870b16947b2c04"
+PKG_VERSION="ce7f55944636b720c7224a8260195b8e193681bd"
+PKG_SHA256="f7fa968cc6b01ba0784c0a0dbdb84ecd39fa09463c5597859d5b804f418e4d7b"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kodi.tv"
-PKG_URL="https://github.com/notspiff/inputstream.rtmp/archive/$PKG_VERSION.tar.gz"
+PKG_URL="https://github.com/xbmc/inputstream.rtmp/archive/$PKG_VERSION.tar.gz"
 PKG_DEPENDS_TARGET="toolchain kodi-platform rtmpdump"
 PKG_SECTION=""
 PKG_SHORTDESC="inputstream.rtmp"

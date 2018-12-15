@@ -1,18 +1,16 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
+# Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
 
 # with 1.0.0 repeat delay is broken. test on upgrade
 
 PKG_NAME="v4l-utils"
-PKG_VERSION="1.14.1"
-PKG_SHA256="7974e5626447407d8a1ed531da0461c0fe00e599a696cb548a240d17d3519005"
-PKG_ARCH="any"
+PKG_VERSION="1.14.2"
+PKG_SHA256="e6b962c4b1253cf852c31da13fd6b5bb7cbe5aa9e182881aec55123bae680692"
 PKG_LICENSE="GPL"
 PKG_SITE="http://linuxtv.org/"
 PKG_URL="http://linuxtv.org/downloads/v4l-utils/$PKG_NAME-$PKG_VERSION.tar.bz2"
 PKG_DEPENDS_TARGET="toolchain"
-PKG_SECTION="system"
-PKG_SHORTDESC="v4l-utils: Linux V4L2 and DVB API utilities and v4l libraries (libv4l)."
 PKG_LONGDESC="Linux V4L2 and DVB API utilities and v4l libraries (libv4l)."
 
 PKG_CONFIGURE_OPTS_TARGET="--without-jpeg \
@@ -61,7 +59,7 @@ create_multi_keymap() {
 }
 
 post_makeinstall_target() {
-  local default_multi_maps f keymap
+  local f keymap
 
   rm -rf $INSTALL/etc/rc_keymaps
     ln -sf /storage/.config/rc_keymaps $INSTALL/etc/rc_keymaps
@@ -85,23 +83,24 @@ post_makeinstall_target() {
   )
 
   # create multi keymap to support several remotes OOTB
+  if [ -n "$IR_REMOTE_PROTOCOLS" -a -n "$IR_REMOTE_KEYMAPS" ]; then
+    create_multi_keymap libreelec_multi "$IR_REMOTE_PROTOCOLS" $IR_REMOTE_KEYMAPS
 
-  default_multi_maps="rc6_mce xbox_360 zotac_ad10 hp_mce xbox_one cubox_i"
+    # use multi-keymap instead of default one
+    sed -i '/^\*\s*rc-rc6-mce\s*rc6_mce/d' $INSTALL/etc/rc_maps.cfg
 
-  create_multi_keymap libreelec_multi "RC6 NEC" $default_multi_maps
-  create_multi_keymap libreelec_multi_amlogic "RC6 NEC" $default_multi_maps \
-    odroid wetek_hub wetek_play_2 minix_neo
-
-  # use multi-keymap instead of default one
-  sed -i '/^\*\s*rc-rc6-mce\s*rc6_mce/d' $INSTALL/etc/rc_maps.cfg
-  cat << EOF >> $INSTALL/etc/rc_maps.cfg
+    cat << EOF >> $INSTALL/etc/rc_maps.cfg
 #
 # Custom LibreELEC configuration starts here
 #
 # use combined multi-table on MCE receivers
 # *		rc-rc6-mce	rc6_mce
 *		rc-rc6-mce	libreelec_multi
+# table for Xbox DVD Playback Kit
+*		rc-xbox-dvd	xbox_dvd
 # multi-table for amlogic devices
-meson-ir	*		libreelec_multi_amlogic
+meson-ir	*		libreelec_multi
 EOF
+
+  fi
 }

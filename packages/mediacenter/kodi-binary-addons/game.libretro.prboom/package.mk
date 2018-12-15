@@ -2,9 +2,9 @@
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="game.libretro.prboom"
-PKG_VERSION="0afba2a"
-PKG_SHA256="f5842d6e3ee591f82b80507f14cb9895654f3b179db0162c25dd858c0521a055"
-PKG_REV="106"
+PKG_VERSION="eae68993b01ebd13d3a6873586f0f01685dd25cb"
+PKG_SHA256="69ab73385b91209bcc6f511301ade88b1a057a8870b63dc295089e6c0b4a6edd"
+PKG_REV="110"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/kodi-game/game.libretro.prboom"

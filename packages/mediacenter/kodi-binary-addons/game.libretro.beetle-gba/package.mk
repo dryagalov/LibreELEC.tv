@@ -2,9 +2,9 @@
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="game.libretro.beetle-gba"
-PKG_VERSION="367ad1f"
-PKG_SHA256="0f461e99293b899aff9a7dd16d64853ea63ac40b91bc2115bc6c5f68831f45cb"
-PKG_REV="106"
+PKG_VERSION="82ee4283877f6b161de748f507f6eaf717e7ddc9"
+PKG_SHA256="13529699d37af9f602a1cb7c51f0493dfecbbd278b1adc927b732bba347151ce"
+PKG_REV="110"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/kodi-game/game.libretro.beetle-gba"

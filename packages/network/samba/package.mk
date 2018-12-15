@@ -3,17 +3,14 @@
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="samba"
-PKG_VERSION="4.8.3"
-PKG_SHA256="e0569a8a605d5dfb49f1fdd11db796f4d36fe0351c4a7f21387ef253010b82ed"
-PKG_ARCH="any"
+PKG_VERSION="4.9.3"
+PKG_SHA256="cf8fd8707e9ad7bce7832006aac5644155165745ba371170661b3004fa2135cf"
 PKG_LICENSE="GPLv3+"
 PKG_SITE="https://www.samba.org"
 PKG_URL="https://download.samba.org/pub/samba/stable/$PKG_NAME-$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain heimdal:host e2fsprogs Python2 zlib readline popt libaio connman"
+PKG_DEPENDS_TARGET="toolchain attr heimdal:host e2fsprogs Python2 zlib readline popt libaio connman"
 PKG_NEED_UNPACK="$(get_pkg_directory heimdal) $(get_pkg_directory e2fsprogs)"
-PKG_SECTION="network"
-PKG_SHORTDESC="samba: The free SMB / CIFS fileserver and client"
-PKG_LONGDESC="Samba is a SMB server that runs on Unix and other operating systems. It allows these operating systems (currently Unix, Netware, OS/2 and AmigaDOS) to act as a file and print server for SMB and CIFS clients. There are many Lan-Manager compatible clients such as LanManager for DOS, Windows for Workgroups, Windows NT, Windows 95, Linux smbfs, OS/2, Pathworks and more."
+PKG_LONGDESC="A free SMB / CIFS fileserver and client."
 PKG_BUILD_FLAGS="-gold"
 
 PKG_MAKE_OPTS_TARGET="V=1"
@@ -81,6 +78,8 @@ PKG_CONFIGURE_OPTS="--prefix=/usr \
                     --bundled-libraries='ALL,!asn1_compile,!compile_et,!zlib' \
                     --without-quotas \
                     --with-syslog  \
+                    --without-json-audit \
+                    --without-ldb-lmdb \
                     --nopyc --nopyo"
 
 PKG_SAMBA_TARGET="smbclient,client/smbclient,smbtree,testparm"

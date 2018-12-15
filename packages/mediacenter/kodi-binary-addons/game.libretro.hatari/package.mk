@@ -2,9 +2,9 @@
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="game.libretro.hatari"
-PKG_VERSION="9d52e4c"
-PKG_SHA256="50296003c25cb1377324ee1057537f04f4bc3aab2d8dae317464adcc25b2a3ff"
-PKG_REV="106"
+PKG_VERSION="4e0467a5824c4548334d5c1f89839fe7043c8726"
+PKG_SHA256="ac6f67ada05201e8b7013e7d779bbc0558ea14397961fbd41aeb9a2c7d8769f5"
+PKG_REV="110"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/kodi-game/game.libretro.hatari"

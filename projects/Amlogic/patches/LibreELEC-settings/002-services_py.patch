@@ -1,26 +1,16 @@
 --- a/src/resources/lib/modules/services.py
 +++ b/src/resources/lib/modules/services.py
-@@ -27,7 +27,8 @@
- 
- import os
- import glob
--
-+import xbmc
-+import xbmcgui
- 
- class services:
- 
-@@ -47,6 +48,9 @@
+@@ -56,6 +56,9 @@
      OPT_SSH_NOPASSWD = None
      AVAHI_DAEMON = None
      CRON_DAEMON = None
 +    EMMC_INSTALL = "/flash/install2emmc.sh"
 +    EMMC_DDBR_BACKUP = "/flash/ddbr-backup.sh"
 +    EMMC_DDBR_RESTORE = "/flash/ddbr-restore.sh"
-     menu = {'4': {
+     menu = {'7': {
          'name': 32001,
          'menuLoader': 'load_menu',
-@@ -259,6 +263,37 @@
+@@ -280,6 +283,37 @@
                              },
                          },
                      },
@@ -58,7 +48,7 @@
                  }
  
              self.oe = oeMain
-@@ -484,6 +519,63 @@
+@@ -505,6 +539,63 @@
              self.oe.set_busy(0)
              self.oe.dbg_log('services::initialize_cron', 'ERROR: (%s)' % repr(e), 4)
  
@@ -69,13 +59,13 @@
 +                dialog = xbmcgui.Dialog()
 +                ret = dialog.yesno('Attention!', 'Install Libreelec to eMMC ?')
 +                if ret:
-+                    self.oe.notify(self.oe._(32363), 'Start Installation to eMMC...')
++                    self.oe.notify(self.oe._(32363), 'Installation...')
 +                    self.oe.set_busy(1)
 +                    message = self.oe.execute(self.EMMC_INSTALL, 1).strip()
 +                    self.oe.set_busy(0)
-+#                    if message == 'Done! Install Libreelec to eMMC completed.':
-+                    dialog = xbmcgui.Dialog()
-+                    dialog.notification('Install',
++                    if message == 'Done! Install Libreelec to eMMC completed.':
++                        dialog = xbmcgui.Dialog()
++                        dialog.notification('Install',
 +                                        '%s' % message,
 +                                        xbmcgui.NOTIFICATION_INFO, 3000)
 +        except Exception, e:

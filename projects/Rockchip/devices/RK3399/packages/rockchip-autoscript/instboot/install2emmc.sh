@@ -15,6 +15,7 @@ dd if="${DEV_EMMC}" of=/flash/u-boot-default.img bs=1M count=16
 
 umount -f "${DEV_EMMC}p1"
 umount -f "${DEV_EMMC}p2"
+umount -f "${DEV_EMMC}p7"
 parted -s "${DEV_EMMC}" mklabel msdos
 parted -s "${DEV_EMMC}" mkpart primary fat32 16M 532M
 parted -s "${DEV_EMMC}" mkpart primary ext4 533M 565M
@@ -28,7 +29,7 @@ sync
 IMAGE_KERNEL="/flash/KERNEL"
 IMAGE_SYSTEM="/flash/SYSTEM"
 IMAGE_DTB="/flash/dtb"
-SCRIPT_EMMC="/flash/extlinux"
+SCRIPT_EMMC="/flash/extlinux/extlinux.conf"
 
 if [ -f $IMAGE_KERNEL -a -f $IMAGE_SYSTEM -a -f $SCRIPT_EMMC ] ; then
 
@@ -42,7 +43,8 @@ if [ -f $IMAGE_KERNEL -a -f $IMAGE_SYSTEM -a -f $SCRIPT_EMMC ] ; then
         cp $IMAGE_KERNEL /tmp/system && sync
         cp $IMAGE_SYSTEM /tmp/system && sync
         cp -r $IMAGE_DTB /tmp/system && sync
-        cp -r $SCRIPT_EMMC /tmp/system && sync
+	mkdir /tmp/system/extlinux
+        cp $SCRIPT_EMMC /tmp/system/extlinux && sync
         sed -e "s/LIBREELEC/LE_EMMC/g" \
           -e "s/STORAGE/DATA_EMMC/g" \
           -i "/tmp/system/extlinux/extlinux.conf"

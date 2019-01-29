@@ -197,7 +197,6 @@ pre_make_target() {
 }
 
 make_target() {
-
   kernel_make modules
   kernel_make INSTALL_MOD_PATH=$INSTALL/$(get_kernel_overlay_dir) modules_install
   rm -f $INSTALL/$(get_kernel_overlay_dir)/lib/modules/*/build

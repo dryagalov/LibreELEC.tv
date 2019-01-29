@@ -93,8 +93,8 @@
 	ADDON_PATH="$ADDON_VERSION/Khadas_VIM/$TARGET_ARCH"
         ;;
       arm)
-        ADDON_SERVER_URL="https://amlgx.libreelec.tv"
- 	ADDON_PATH="$ADDON_VERSION/${DEVICE:-$PROJECT}/$TARGET_ARCH"
+#        ADDON_SERVER_URL="https://amlgx.libreelec.tv"
+	ADDON_PATH="9.0/${DEVICE:-$PROJECT}/$TARGET_ARCH"
         ;;
     esac
 

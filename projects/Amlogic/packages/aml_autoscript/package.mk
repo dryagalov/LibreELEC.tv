@@ -25,4 +25,13 @@ makeinstall_target() {
       sed -e "s/@DTB_NAME@/$DEFAULT_DTB_NAME/g" \
           -i "$src"
   done
+
+  for src in $INSTALL/instboot/extlinux/*.conf ; do
+      sed -e "s/@BOOT_LABEL@/$DISTRO_BOOTLABEL/g" \
+          -e "s/@DISK_LABEL@/$DISTRO_DISKLABEL/g" \
+          -i "$src"
+
+      sed -e "s/@DTB_NAME@/$DEFAULT_DTB_NAME/g" \
+          -i "$src"
+  done
 }

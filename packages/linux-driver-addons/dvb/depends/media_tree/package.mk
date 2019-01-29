@@ -2,6 +2,8 @@
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="media_tree"
+#PKG_VERSION="2018-12-07-e159b6074c82"
+#PKG_SHA256="8df4e76878239881cf69bddab2f1c69be698c25682d114b706d75123972c95b7"
 PKG_VERSION="2018-12-19-4bd46aa0353e"
 PKG_SHA256="fec37cb4bb5143600168be3b8599b4d2a2faf019d92a8947f9979ac8b0712adf"
 PKG_LICENSE="GPL"
@@ -23,6 +25,7 @@ unpack() {
   rm -rf $PKG_BUILD/drivers/staging/media/atomisp
   sed -i 's|^.*drivers/staging/media/atomisp.*$||' \
     $PKG_BUILD/drivers/staging/media/Kconfig
+
   if [ "$PROJECT" = "Amlogic" ]; then
     cp -rL $(get_build_dir linux)/drivers/media/platform/meson/vdec $PKG_BUILD/drivers/media/platform/meson/
     cp -rL $(get_build_dir media_tree_aml)/drivers/media/platform/meson/dvb $PKG_BUILD/drivers/media/platform/meson/
@@ -32,4 +35,5 @@ unpack() {
     echo "obj-y += vdec/" >> "$PKG_BUILD/drivers/media/platform/meson/Makefile"
     echo 'source "drivers/media/platform/meson/dvb/Kconfig"' >>  "$PKG_BUILD/drivers/media/platform/Kconfig"
   fi
+
 }

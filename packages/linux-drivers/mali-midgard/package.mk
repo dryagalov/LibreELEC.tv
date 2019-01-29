@@ -22,8 +22,8 @@ case $PROJECT in
     PKG_MALI_PLATFORM_CONFIG="sunxi"
     ;;
   Amlogic)
-    PKG_VERSION="46d7ff7772e59d302c3850880f96992c362138d5" # mali_kbase for panfrost
-    PKG_SHA256="de8591c93c50b1e0515795abf7b946e412aa9121d967e0268a49483ddd59c8af"
+    PKG_VERSION="c59a1cd7c66f0800c826814ac1096e3a746e2a91" # mali_kbase for panfrost
+    PKG_SHA256="037863e8b6112d48c2b85d7e4aa48657c2062ef8d4a749f34a95864377f929ad"
     PKG_URL="https://gitlab.freedesktop.org/panfrost/mali_kbase/-/archive/$PKG_VERSION/mali_kbase-$PKG_VERSION.tar.gz"
     PKG_SOURCE_DIR="mali_kbase-$PKG_VERSION*"
     PKG_PATCH_DIRS="amlogic"

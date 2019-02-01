@@ -1,7 +1,7 @@
-From 9bbf2cb903bc9408eaf6574d92deb5b9cd817d58 Mon Sep 17 00:00:00 2001
+From f981054b34c6f5e782363bed59c7485bd4a7c344 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <mjourdan@baylibre.com>
 Date: Mon, 5 Nov 2018 10:42:29 +0100
-Subject: [PATCH 16/17] media: meson: vdec: more debug output on src change
+Subject: [PATCH 16/22] media: meson: vdec: more debug output on src change
 
 ---
  drivers/media/platform/meson/vdec/vdec_helpers.c | 7 +++++--

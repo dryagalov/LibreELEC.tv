@@ -14,22 +14,26 @@ case $PROJECT in
   Amlogic)
     case $DEVICE in
       Khadas_VIM2|Nexbox_A1|S912)
-        PKG_VERSION="5f3fc953b7d241ce757fe7066f61f571c20c51bf" # winsys-rebased-meson
-        PKG_SHA256="f1833163166442555bdb36f9abb3eb443e2b0f3af38be3a7dc212483694cd84c"
+        #PKG_VERSION="3c2923caa79f885212dc0b891ea420e325f4ccea" # master
+        #PKG_SHA256="992e86cd1e08fe67591a8838a9e4a0c54af8c169b2fa052938b7e9e44d31dc32"
+        #PKG_URL="https://gitlab.freedesktop.org/panfrost/mesa/-/archive/$PKG_VERSION/mesa-$PKG_VERSION.tar.gz"
+        #;;
+        PKG_VERSION="5beac5f5333a5d89a3ad363b2139db495589d9ce" # winsys-rebased-meson
+        PKG_SHA256="72eba8c035161be88bcb223f40525d37f64ead3d8b726dd09aa57dcb8421bb15"
         PKG_URL="https://github.com/chewitt/mesa/archive/$PKG_VERSION.tar.gz"
         PKG_SOURCE_NAME="mesa-$PKG_VERSION.tar.gz"
         PKG_PATCH_DIRS="panfrost"
         ;;
       *)
-        PKG_VERSION="2c752b821704962c3f6352f9bc9174f3feb6902d"
-        PKG_SHA256="177e7a6a2866f24c37ed0aed842c3c51d9a0d015cbbe80b6451dc3e921a28c25"
+        PKG_VERSION="8e713e4781982c700bfc7b09279146189d525a86" # lima-18.3
+        PKG_SHA256="389b781c64e9be176ea98ec9b940179d410a7eebc206318d33b3806450ea4f16"
 	PKG_URL="https://gitlab.freedesktop.org/lima/mesa/-/archive/$PKG_VERSION/mesa-$PKG_VERSION.tar.gz"
 	;;
     esac
     ;;
   *)
-    PKG_VERSION="18.3.1"
-    PKG_SHA256="4d59968c5aca7a4bbcfdb6f7c2a4036fac3e1bdad98ac6b239b72cdbc2a9ef21"
+    PKG_VERSION="18.3.2"
+    PKG_SHA256="e9760ff8f0a6700c395705181ee997cd4fcb6f492143f2d52965ca63bca7139f"
     PKG_URL="https://github.com/mesa3d/mesa/archive/mesa-$PKG_VERSION.tar.gz"
     ;;
 esac

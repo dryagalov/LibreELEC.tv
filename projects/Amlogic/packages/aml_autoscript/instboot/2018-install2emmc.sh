@@ -25,7 +25,7 @@ if grep -q "${DEV_EMMC}p1" /proc/mounts ; then
 fi
 
 if grep -q "${DEV_EMMC}p2" /proc/mounts ; then
-    umount -f "${DEV_EMMC}p1"
+    umount -f "${DEV_EMMC}p2"
 fi
 
 parted -s "${DEV_EMMC}" mklabel msdos

@@ -1,11 +1,18 @@
-commit e446501c41782a8b9515a972eb0f99c871f22e46
-Author: balbes150 <balbes-150@yandex.ru>
-Date:   Sat Jan 26 14:31:37 2019 +0300
+From e446501c41782a8b9515a972eb0f99c871f22e46 Mon Sep 17 00:00:00 2001
+From: balbes150 <balbes-150@yandex.ru>
+Date: Sat, 26 Jan 2019 14:31:37 +0300
+Subject: [PATCH] v20190126 fix sound S905
 
-    v20190126 fix sound S905
+---
+ .../boot/dts/amlogic/meson-gxbb-nanopi-k2.dts    | 16 ++++++++--------
+ .../boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts  | 16 ++++++++--------
+ .../boot/dts/amlogic/meson-gxbb-odroidc2.dts     | 16 ++++++++--------
+ arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi | 16 ++++++++--------
+ .../arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi | 16 ++++++++--------
+ 5 files changed, 40 insertions(+), 40 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-index d72b5378ee..b355250840 100644
+index d72b5378eead..b355250840f9 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
 @@ -92,6 +92,14 @@
@@ -39,7 +46,7 @@ index d72b5378ee..b355250840 100644
  				sound-dai = <&aiu_i2s>;
  			};
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
-index 1e29891d3b..48da053413 100644
+index 1e29891d3bae..48da0534137a 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
 @@ -123,6 +123,14 @@
@@ -73,7 +80,7 @@ index 1e29891d3b..48da053413 100644
  				sound-dai = <&aiu_i2s>;
  			};
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-index 1172a4d0b5..334cf79236 100644
+index 1172a4d0b5ba..334cf792364b 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
 @@ -115,6 +115,14 @@
@@ -107,7 +114,7 @@ index 1172a4d0b5..334cf79236 100644
  				sound-dai = <&aiu_i2s>;
  			};
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi
-index e163e7cd5d..eff9e56476 100644
+index e163e7cd5d5b..eff9e56476bb 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-p20x.dtsi
 @@ -118,6 +118,14 @@
@@ -141,7 +148,7 @@ index e163e7cd5d..eff9e56476 100644
  				sound-dai = <&aiu_i2s>;
  			};
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
-index 148f46a301..6e95d52f85 100644
+index 148f46a30115..6e95d52f85b9 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
 @@ -118,6 +118,14 @@

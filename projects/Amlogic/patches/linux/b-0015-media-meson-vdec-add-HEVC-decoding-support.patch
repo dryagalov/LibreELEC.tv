@@ -1,7 +1,7 @@
-From dba97e35819269e43101cd4137693d61d8b5dd33 Mon Sep 17 00:00:00 2001
+From 30c288ab0618143c4f13e1b2171456b4d793465b Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <mjourdan@baylibre.com>
 Date: Wed, 29 Aug 2018 18:48:35 +0200
-Subject: [PATCH 15/17] media: meson: vdec: add HEVC decoding support
+Subject: [PATCH 15/22] media: meson: vdec: add HEVC decoding support
 
 Add support for V4L2_PIX_FMT_HEVC
 ---

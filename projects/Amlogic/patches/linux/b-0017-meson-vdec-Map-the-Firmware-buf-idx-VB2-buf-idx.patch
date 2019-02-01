@@ -1,7 +1,7 @@
-From a4801d0c1f5e405bfbd28de8462c2589caeed568 Mon Sep 17 00:00:00 2001
+From da1357464ce90583fd057259c494566cece2822a Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <mjourdan@baylibre.com>
 Date: Mon, 3 Dec 2018 10:25:00 +0100
-Subject: [PATCH 17/17] meson: vdec: Map the Firmware buf idx <-> VB2 buf idx
+Subject: [PATCH 17/22] meson: vdec: Map the Firmware buf idx <-> VB2 buf idx
 
 The current code assumes the vb2 indexes are in order (0 -> n) when
 iterating over them. This is very wrong and, in the case where they are

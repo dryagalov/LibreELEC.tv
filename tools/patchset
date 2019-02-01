@@ -43,14 +43,14 @@ do_elyotna(){
   rm projects/Amlogic/patches/linux/b-* 2&>/dev/null
   cd ~/linux.elyotna
   rm *.patch 2&>/dev/null
-  git checkout 4.20/v4l2-m2m-pr
-  git fetch origin 4.20/v4l2-m2m-pr
-  git reset --hard origin/4.20/v4l2-m2m-pr
-  git format-patch --start-number 0001 2e6e902d185027f8e3cb8b7305238f7e35d6a436 # 4.20-rc4
+  git checkout 4.20/v4l2-m2m-vp9
+  git fetch origin 4.20/v4l2-m2m-vp9
+  git reset --hard origin/4.20/v4l2-m2m-vp9
+  git format-patch --start-number 0001 8fe28cb58bcb235034b64cbbb7550a8a43fd88be # 4.20.0
   for filename in *.patch; do mv "$filename" "b-$filename"; done;
   mv *.patch $DIR/projects/Amlogic/patches/linux/
-  #cd $DIR
-  #git checkout projects/Amlogic/patches/linux/b-0005-arm64-dts-meson-add-vdec-entries.patch
+  cd $DIR
+  git checkout projects/Amlogic/patches/linux/b-0005-arm64-dts-meson-add-vdec-entries.patch
 }
 
 do_kwiboo(){

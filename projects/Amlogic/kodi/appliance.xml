@@ -4,6 +4,10 @@
   <section id="system">
     <category id="display">
       <group id="1">
+        <setting id="videoscreen.screenmode">
+          <visible>true</visible>
+          <default>0192001080060.00000pstd</default>
+        </setting>
         <setting id="videoscreen.limitguisize">
           <visible>false</visible>
           <default>3</default>

@@ -1,7 +1,7 @@
-From 2e53ae2e5b58b52aecf58fac814a96abed2b41b3 Mon Sep 17 00:00:00 2001
+From d0a277569c46a5117feebe06cc0ffc6eeddaf6f6 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <mjourdan@baylibre.com>
 Date: Wed, 10 Oct 2018 17:22:27 +0200
-Subject: [PATCH 06/17] meson: vdec: introduce controls and
+Subject: [PATCH 06/22] meson: vdec: introduce controls and
  V4L2_CID_MIN_BUFFERS_FOR_CAPTURE
 
 ---

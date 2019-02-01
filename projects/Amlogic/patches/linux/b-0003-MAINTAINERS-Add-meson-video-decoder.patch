@@ -1,7 +1,7 @@
-From e0fe0ae67c9040465b57babc61a1623189902f08 Mon Sep 17 00:00:00 2001
+From 6652f5c9195559453d3c02ccdc0534fef1bb3c29 Mon Sep 17 00:00:00 2001
 From: Maxime Jourdan <mjourdan@baylibre.com>
 Date: Tue, 4 Sep 2018 10:07:08 +0200
-Subject: [PATCH 03/17] MAINTAINERS: Add meson video decoder
+Subject: [PATCH 03/22] MAINTAINERS: Add meson video decoder
 
 Add an entry for the meson video decoder for amlogic SoCs.
 
@@ -11,10 +11,10 @@ Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
  1 file changed, 8 insertions(+)
 
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 380e43f..d9118a6 100644
+index f3a5c97..97b642f 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -9646,6 +9646,14 @@ F:	drivers/media/platform/meson/ao-cec.c
+@@ -9732,6 +9732,14 @@ F:	drivers/media/platform/meson/ao-cec.c
  F:	Documentation/devicetree/bindings/media/meson-ao-cec.txt
  T:	git git://linuxtv.org/media_tree.git
  

@@ -32,8 +32,8 @@ case $PROJECT in
     esac
     ;;
   *)
-    PKG_VERSION="18.3.2"
-    PKG_SHA256="e9760ff8f0a6700c395705181ee997cd4fcb6f492143f2d52965ca63bca7139f"
+    PKG_VERSION="18.3.3"
+    PKG_SHA256="10e20e8498f935863946c82581ee1f94cfa051f6e7e96a1ba9d804efbefb9c1f"
     PKG_URL="https://github.com/mesa3d/mesa/archive/mesa-$PKG_VERSION.tar.gz"
     ;;
 esac

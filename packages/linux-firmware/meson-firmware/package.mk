@@ -2,15 +2,15 @@
 # Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="meson-firmware"
-PKG_VERSION="9cb39a43dcb2cc19253816b0fef8f3698e344f4f"
-PKG_SHA256="03fdaec5421fcc125f17d8dcf925aa06580a4c0fc8ee99437bbb041ba95ea600"
+PKG_VERSION="52ed8bc19cf1e91c3cf443448efa100b4549a777"
+PKG_SHA256="9115012afe9f41c58789933960fbcc257d2a16d264fe6753d61ee2858fbba4a6"
 PKG_ARCH="any"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://github.com/LibreELEC/meson-firmware"
 PKG_URL="https://github.com/LibreELEC/meson-firmware/archive/$PKG_VERSION.tar.gz"
 PKG_DEPENDS_TARGET="toolchain"
 PKG_SECTION="linux-firmware"
-PKG_SHORTDESC="meson-firmware: Amlogic microcode firmware for V4L2 mem2mem vdec drivers"
+PKG_SHORTDESC="meson-firmware: Amlogic microcode firmware for the V4L2 mem2mem vdec driver"
 PKG_TOOLCHAIN="manual"
 
 makeinstall_target() {

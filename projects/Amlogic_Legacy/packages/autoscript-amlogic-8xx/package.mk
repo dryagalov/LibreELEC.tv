@@ -4,7 +4,8 @@
 PKG_NAME="autoscript-amlogic-8xx"
 PKG_VERSION="0.2"
 PKG_LICENSE="GPL"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_DEPENDS_TARGET="toolchain u-boot-tools-aml:host"
+PKG_LONGDESC="Autoscript package for Amlogic devices"
 PKG_TOOLCHAIN="manual"
 
 make_target() {
